@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="app">
+    <li v-for="item in items">
+        <p v-text="item.label"></p>
+    </li>
+</ul>
+
+<script src="../vue.js/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            items:[{
+                label:'apple'
+            },
+                {
+                    label:'banana'
+                }
+            ]
+        }
+    })
+</script>
+</body>
+</html>
