@@ -5,11 +5,13 @@
     <ul>
       <li v-for="item in items" :class="{finished:item.isFinished}" @click="toggleFinish(item)">{{item.label}}</li>
     </ul>
+    <component-a msgfromfather="suck"></component-a>
   </div>
 </template>
 
 <script>
   import Store from './store' //调用通缉目录下的
+  import ComponentA from './components/componentA.vue'
   //console.log(Store)
 export default{
 
@@ -22,6 +24,7 @@ export default{
 
     }
   },
+  components:{ComponentA},
   watch:{
     items:{
       handler:function (items) {
