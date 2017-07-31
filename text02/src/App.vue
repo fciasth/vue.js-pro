@@ -5,7 +5,8 @@
     <ul>
       <li v-for="item in items" :class="{finished:item.isFinished}" @click="toggleFinish(item)">{{item.label}}</li>
     </ul>
-    <component-a msgfromfather="suck"></component-a>
+    <p>child tells me :{{childWords }}</p>
+    <component-a msgfromfather="suck" @child-tell-me-something="listenToMyBoy"></component-a>
   </div>
 </template>
 
@@ -21,6 +22,7 @@ export default{
       items:Store.fetch(),
 
       newItem : '',
+      childWords:''
 
     }
   },
@@ -45,6 +47,9 @@ export default{
         isFinished:true
       });
       this.newItem = ' ';
+    },
+    listenToMyBoy:function (msg) {
+        this.childWords = msg;
     }
   }
 }

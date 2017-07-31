@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="onClickMe">Click!</button>
+    <button @click="onClickMe" >Open Mouse!</button>
 
   </div>
 </template>
@@ -15,7 +15,7 @@
     },
     methods:{
       onClickMe:function () {
-        console.log(this.msgfromfather);
+        this.$emit('child-tell-me-something',this.msg);
       }
     },
     props:['msgfromfather'],//注册这个
